@@ -18,21 +18,22 @@ namespace DungeonApi.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Monster>> Get(string name)
+    public ActionResult<IEnumerable<Monster>> Get(string monsterName)
     {
       var query = _db.Monsters.AsQueryable();
-      
-      if (name != null)
+
+      if (monsterName != null)
       {
-        query = query.Where(entry => entry.MonsterName == name);
+        query = query.Where(entry => entry.MonsterName == monsterName);
       }
+      
       return query.ToList();
     }
 
     [HttpPost]
-    public void Post([FromBody] Monster monster)
+    public void Post([FromBody] Monster monsterName)
     {
-      _db.Monsters.Add(monster);
+      _db.Monsters.Add(monsterName);
       _db.SaveChanges();
     }
 
