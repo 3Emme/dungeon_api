@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DungeonApi.Controllers
 {
+  
   [Route("api/[controller]")]
   [ApiController]
   public class MonstersController : ControllerBase
