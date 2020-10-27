@@ -33,11 +33,30 @@ namespace DungeonApi.Controllers
     }
 
     [HttpPost]
-    public void Post([FromBody] Monster monsterName)
+    public void Post([FromBody] Monster monster, int MainTypeId)
     {
-      _db.Monsters.Add(monsterName);
+      _db.Monsters.Add(monster);
+      if (MainTypeId != 0)
+      {
+        _db.MonsterMainTypes.Add(new MonsterMainType() { MainTypeId = MainTypeId, MonsterId = monster.MonsterId });
+      }
       _db.SaveChanges();
     }
+
+    // [HttpPost]
+    // public async Task<ActionResult> Create(Monster monster, int MainTypeId)
+    // {
+    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    //   var currentUser = await _userManager.FindByIdAsync(userId);
+    //   monster.User = currentUser;
+    //   _db.Monsters.Add(monster);
+    //   if (MainTypeId != 0)
+    //   {
+    //     _db.MonsterMainTypes.Add(new MonsterMainType() { MainTypeId = MainTypeId, MonsterId = monster.MonsterId });
+    //   }
+    //   _db.SaveChanges();
+    //   return RedirectToAction("Index");
+    // }
 
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Monster monster)

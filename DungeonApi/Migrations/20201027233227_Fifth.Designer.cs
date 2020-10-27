@@ -3,14 +3,16 @@ using System;
 using DungeonApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DungeonApi.Migrations
 {
     [DbContext(typeof(DungeonApiContext))]
-    partial class DungeonApiContextModelSnapshot : ModelSnapshot
+    [Migration("20201027233227_Fifth")]
+    partial class Fifth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

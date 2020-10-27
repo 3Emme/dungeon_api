@@ -3,14 +3,16 @@ using System;
 using DungeonApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DungeonApi.Migrations
 {
     [DbContext(typeof(DungeonApiContext))]
-    partial class DungeonApiContextModelSnapshot : ModelSnapshot
+    [Migration("20201027224101_Compendium")]
+    partial class Compendium
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +32,7 @@ namespace DungeonApi.Migrations
 
                     b.HasKey("ArmorId");
 
-                    b.ToTable("Armors");
+                    b.ToTable("Armor");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.Behavior", b =>
@@ -44,7 +46,7 @@ namespace DungeonApi.Migrations
 
                     b.HasKey("BehaviorId");
 
-                    b.ToTable("Behaviors");
+                    b.ToTable("Behavior");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.ItemProperty", b =>
@@ -60,7 +62,7 @@ namespace DungeonApi.Migrations
 
                     b.HasKey("ItemPropertyId");
 
-                    b.ToTable("ItemProperties");
+                    b.ToTable("ItemProperty");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.ItemPropertyJoin", b =>
@@ -82,7 +84,7 @@ namespace DungeonApi.Migrations
 
                     b.HasIndex("WeaponId");
 
-                    b.ToTable("ItemPropertyJoins");
+                    b.ToTable("ItemPropertyJoin");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.MainType", b =>
@@ -96,7 +98,7 @@ namespace DungeonApi.Migrations
 
                     b.HasKey("MainTypeId");
 
-                    b.ToTable("MainTypes");
+                    b.ToTable("MainType");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.Monster", b =>
@@ -127,7 +129,7 @@ namespace DungeonApi.Migrations
 
                     b.HasIndex("MonsterId");
 
-                    b.ToTable("MonsterArmors");
+                    b.ToTable("MonsterArmor");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.MonsterBehavior", b =>
@@ -145,7 +147,7 @@ namespace DungeonApi.Migrations
 
                     b.HasIndex("MonsterId");
 
-                    b.ToTable("MonsterBehaviors");
+                    b.ToTable("MonsterBehavior");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.MonsterMainType", b =>
@@ -163,7 +165,7 @@ namespace DungeonApi.Migrations
 
                     b.HasIndex("MonsterId");
 
-                    b.ToTable("MonsterMainTypes");
+                    b.ToTable("MonsterMainType");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.MonsterWeapon", b =>
@@ -183,7 +185,7 @@ namespace DungeonApi.Migrations
 
                     b.HasIndex("WeaponId");
 
-                    b.ToTable("MonsterWeapons");
+                    b.ToTable("MonsterWeapon");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.Weapon", b =>
@@ -197,7 +199,7 @@ namespace DungeonApi.Migrations
 
                     b.HasKey("WeaponId");
 
-                    b.ToTable("Weapons");
+                    b.ToTable("Weapon");
                 });
 
             modelBuilder.Entity("DungeonApi.Models.ItemPropertyJoin", b =>
