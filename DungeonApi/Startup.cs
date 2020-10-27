@@ -8,6 +8,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
+using DungeonApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonApi
 {
@@ -23,6 +25,9 @@ namespace DungeonApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DungeonApiContext>(opt =>
+                opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

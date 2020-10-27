@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DungeonApi.Migrations
 {
     [DbContext(typeof(DungeonApiContext))]
-    [Migration("20201026222634_Fourth")]
-    partial class Fourth
+    [Migration("20201027181116_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

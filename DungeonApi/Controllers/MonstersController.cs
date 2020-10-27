@@ -3,10 +3,11 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using DungeonApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DungeonApi.Controllers
 {
-  
+  [Authorize]
   [Route("api/[controller]")]
   [ApiController]
   public class MonstersController : ControllerBase

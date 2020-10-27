@@ -8,7 +8,6 @@ namespace DungeonApi.Models
     {
     }
     public DbSet<Monster> Monsters { get; set; }
-    public DbSet<User> Users { get; set; }
   }
 
 }
