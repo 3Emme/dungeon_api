@@ -20,13 +20,13 @@ namespace DungeonApi.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Monster>> Get(string monsterName)
+    public ActionResult<IEnumerable<Monster>> Get(int Id)
     {
       var query = _db.Monsters.AsQueryable();
 
-      if (monsterName != null)
+      if (Id != 0)
       {
-        query = query.Where(entry => entry.MonsterName == monsterName);
+        query = query.Where(entry => entry.MonsterId == Id);
       }
       
       return query.ToList();
