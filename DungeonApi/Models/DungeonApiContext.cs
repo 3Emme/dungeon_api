@@ -12,7 +12,7 @@ namespace DungeonApi.Models
     public virtual DbSet<Behavior> Behaviors { get; set; }
     public virtual DbSet<Weapon> Weapons { get; set; }
     public DbSet<ItemProperty> ItemProperties { get; set; }
-    public DbSet<ItemPropertyJoin> ItemPropertyJoins { get;  set; }
+    public DbSet<ItemPropertyJoin> ItemPropertyJoins { get; set; }
     public DbSet<MainType> MainTypes { get; set; }
     public DbSet<MonsterArmor> MonsterArmors { get; set; }
     public DbSet<MonsterBehavior> MonsterBehaviors { get; set; }
