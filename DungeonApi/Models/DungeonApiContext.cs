@@ -20,6 +20,12 @@ namespace DungeonApi.Models
     public DbSet<MonsterMainType> MonsterMainTypes { get; set; }
     public DbSet<MonsterWeapon> MonsterWeapons { get; set; }
 
+    public DungeonApiContext(DbContextOptions options) : base(options) { }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+      optionsBuilder.UseLazyLoadingProxies();
+    }
+
   }
 
 }
