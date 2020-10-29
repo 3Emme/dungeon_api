@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DungeonApi.Models
 {
-  public class DungeonApiContext : DbContext
+  public class DungeonApiContext : IdentityDbContext<ApplicationUser>
   {
     public DungeonApiContext(DbContextOptions<DungeonApiContext> options) : base(options)
     {
