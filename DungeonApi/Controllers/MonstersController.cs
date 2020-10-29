@@ -20,13 +20,13 @@ namespace DungeonApi.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Monster>> Get(int Id)
+    public ActionResult<IEnumerable<Monster>> Get(string name)
     {
       var query = _db.Monsters.AsQueryable();
 
-      if (Id != 0)
+      if (name != null)
       {
-        query = query.Where(entry => entry.MonsterId == Id);
+        query = query.Where(entry => entry.MonsterName == name);
       }
       
       return query.ToList();
@@ -42,6 +42,13 @@ namespace DungeonApi.Controllers
       }
       _db.SaveChanges();
     }
+
+    [HttpGet("{id}")]
+    public ActionResult<Monster> Get(int id)
+    {
+      return _db.Monsters.FirstOrDefault(entry => entry.MonsterId == id);
+    }
+
 
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Monster monster)
