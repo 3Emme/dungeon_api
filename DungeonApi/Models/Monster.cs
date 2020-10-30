@@ -15,7 +15,8 @@ namespace DungeonApi.Models
     public int MonsterId { get; set; }
     [Required]
     public string MonsterName { get; set; }
-    public virtual ApplicationUser User { get; set; }
+    // public virtual ApplicationUser User { get; set; }
+    public string UserId { get; set; }
     public virtual ICollection<MonsterMainType> MainTypes { get; set; }
     public virtual ICollection<MonsterBehavior> Behaviors { get; set; }
     public virtual ICollection<MonsterArmor> Armors { get; set; }

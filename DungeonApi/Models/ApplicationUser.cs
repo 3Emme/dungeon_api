@@ -1,9 +1,9 @@
-using Microsoft.AspNetCore.Identity;
+// using Microsoft.AspNetCore.Identity;
 
-namespace DungeonApi.Models
-{
-    public class ApplicationUser : IdentityUser
-    {
-
-    }
-}
+// namespace DungeonApi.Models
+// {
+//     public class ApplicationUser : IdentityUser
+//     {
+        
+//     }
+// }

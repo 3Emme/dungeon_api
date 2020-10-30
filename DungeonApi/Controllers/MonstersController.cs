@@ -46,7 +46,8 @@ namespace DungeonApi.Controllers
     [HttpGet("{id}")]
     public ActionResult<Monster> Get(int id)
     {
-      return _db.Monsters.Include(monster => monster.User).FirstOrDefault(entry => entry.MonsterId == id);
+      // return _db.Monsters.Include(monster => monster.User).FirstOrDefault(entry => entry.MonsterId == id);
+      return _db.Monsters.FirstOrDefault(entry => entry.MonsterId == id);
     }
 
 
